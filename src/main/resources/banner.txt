@@ -11,6 +11,10 @@ Swagger ..........: https://localhost:8080/swagger-ui.html
 H2Console ........: https://localhost:8080/h2-console
 Currículo ........: https://brunocarneiro312.github.io
 
-* Nota aos avaliadores: Cada etapa de desenvolvimento foi separada em branchs numeradas com "etapa/nome"
+* Nota aos avaliadores:
+  1 - Cada etapa de desenvolvimento foi separada em branchs numeradas com "etapa/nome"
+  2 - A relação entre a entidade Pessoa e Endereço foi modelado como @ManyToOne
+     2.1 - Uma Pessoa só pode pertencer a um endereço.
+     2.2 - Um Endereço pode pertencer a muitas pessoas.
 
 

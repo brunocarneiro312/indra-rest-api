@@ -1,0 +1,5 @@
+# Habilitando H2Console
+spring:
+  h2:
+    console:
+      enabled: true
