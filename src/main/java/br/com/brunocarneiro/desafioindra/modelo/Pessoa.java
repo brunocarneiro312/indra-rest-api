@@ -10,5 +10,6 @@ public class Pessoa implements Serializable {
     private String nome;
     private String sobrenome;
     private String email;
+    private Endereco endereco;
 
 }
