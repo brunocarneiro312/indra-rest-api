@@ -8,6 +8,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * -----------------
+ * Serviço de Pessoa
+ * -----------------
+ * @author bruno.carneiro
+ */
 @Service
 public class PessoaServiceImpl implements PessoaService {
 
@@ -18,14 +24,28 @@ public class PessoaServiceImpl implements PessoaService {
         this.pessoaRepository = pessoaRepository;
     }
 
+    /**
+     * ------------
+     * Salva Pessoa
+     * ------------
+     * @param pessoa
+     * @return pessoa salva
+     */
     @Override
     public Pessoa salvar(Pessoa pessoa) {
-        if (pessoaValida(pessoa)) {
+        if (isPessoaValida(pessoa)) {
             return this.pessoaRepository.save(pessoa);
         }
         return null;
     }
 
+    /**
+     * ------------
+     * Busca pessoa
+     * ------------
+     * @param idPessoa
+     * @return pessoa
+     */
     @Override
     public Pessoa buscar(Long idPessoa) {
         if (idPessoa != null) {
@@ -34,38 +54,59 @@ public class PessoaServiceImpl implements PessoaService {
         return null;
     }
 
+    /**
+     * -------------
+     * deleta pessoa
+     * -------------
+     * @param idPessoa
+     * @return pessoa removida
+     */
     @Override
     public Pessoa deletar(Long idPessoa) {
-
         if (idPessoa != null) {
-
             Pessoa pessoaASerRemovida = this.pessoaRepository.findById(idPessoa).get();
-
             if (pessoaASerRemovida != null) {
                 pessoaRepository.delete(pessoaASerRemovida);
                 return pessoaASerRemovida;
             }
         }
-
         return null;
     }
 
+    /**
+     * -------------
+     * altera pessoa
+     * -------------
+     * @param pessoa
+     * @return pessoa alterada
+     */
     @Override
     public Pessoa alterar(Pessoa pessoa) {
-
-        if (pessoaValida(pessoa)) {
+        if (isPessoaValida(pessoa)) {
             return pessoaRepository.saveAndFlush(pessoa);
         }
-
         return null;
     }
 
+    /**
+     * ----------------------------------
+     * lista todas as pessoas cadastradas
+     * ----------------------------------
+     * @return lista de pessoas
+     */
     @Override
     public List<Pessoa> listar() {
         return pessoaRepository.findAll();
     }
 
-    private boolean pessoaValida(Pessoa pessoa) {
+    /**
+     * -------------
+     * Valida pessoa
+     * -------------
+     * @param pessoa
+     * @return
+     */
+    private boolean isPessoaValida(Pessoa pessoa) {
         return pessoa.getNome() != null
                 && pessoa.getSobrenome() != null
                 && pessoa.getEmail() != null
