@@ -16,5 +16,3 @@ Currículo ........: https://brunocarneiro312.github.io
   2 - A relação entre a entidade Pessoa e Endereço foi modelado como @ManyToOne
      2.1 - Uma Pessoa só pode pertencer a um endereço.
      2.2 - Um Endereço pode pertencer a muitas pessoas.
-
-
