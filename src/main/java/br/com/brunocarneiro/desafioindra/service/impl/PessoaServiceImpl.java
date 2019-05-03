@@ -49,7 +49,7 @@ public class PessoaServiceImpl implements PessoaService {
     @Override
     public Pessoa buscar(Long idPessoa) {
         if (idPessoa != null) {
-            return this.pessoaRepository.findById(idPessoa).get();
+            return this.pessoaRepository.findById(idPessoa).orElse(null);
         }
         return null;
     }

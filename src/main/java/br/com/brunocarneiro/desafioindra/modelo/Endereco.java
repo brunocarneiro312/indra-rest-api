@@ -1,5 +1,6 @@
 package br.com.brunocarneiro.desafioindra.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -41,6 +42,7 @@ public class Endereco implements Serializable {
     @Column(name = "COMPLEMENTO")
     private String complemento;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "endereco")
     private List<Pessoa> pessoas;
 

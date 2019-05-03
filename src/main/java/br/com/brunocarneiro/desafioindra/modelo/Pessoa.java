@@ -1,5 +1,6 @@
 package br.com.brunocarneiro.desafioindra.modelo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,7 @@ public class Pessoa implements Serializable {
     @Email
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinTable(name = "PESSOA_ENDERECO",
             joinColumns = @JoinColumn(name = "ID_PESSOA", referencedColumnName = "ID_PESSOA"),
             inverseJoinColumns = @JoinColumn(name = "ID_ENDERECO", referencedColumnName = "ID_ENDERECO"))
