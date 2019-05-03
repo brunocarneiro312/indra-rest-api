@@ -6,9 +6,9 @@
  |___|_||_\__,_|_| \__,_| |_|_\___|___/ |_|   /_/ \_\_| |___|
 
 
-Author ...........: Bruno Carneiro
-Swagger ..........: https://localhost:8080/swagger-ui.html
-H2Console ........: https://localhost:8080/h2-console
+Author ...........: Bruno Carneiro (bruno.carneiro312@gmail.com)
+Swagger ..........: http://localhost:8080/swagger-ui.html
+H2Console ........: http://localhost:8080/h2-console
 Currículo ........: https://brunocarneiro312.github.io
 
 * Nota aos avaliadores:

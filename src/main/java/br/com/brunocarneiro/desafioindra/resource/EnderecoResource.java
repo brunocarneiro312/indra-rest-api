@@ -40,7 +40,7 @@ public class EnderecoResource {
         return null;
     }
 
-    @GetMapping("/pessoa")
+    @GetMapping("/endereco")
     public ResponseEntity<List<Endereco>> listEnderecos() {
         return null;
     }
